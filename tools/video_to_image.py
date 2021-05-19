@@ -23,8 +23,7 @@ def main():
 
         print(vcap.isOpened() , ret)
         if frame is not None:
-            # Display the resulting frame
-            cv2.imshow('frame',frame)
+            # Saving the resulting frame
             cv2.imwrite('frame'+str(counter)+'.jpg',frame)
 
             # Press q to close the video windows before it ends if you want
@@ -39,6 +38,7 @@ def main():
     vcap.release()
     cv2.destroyAllWindows()
     print("Video stop")
+    print("Number of Frames = %d" % counter)
 
 if __name__ == '__main__':
     main()
